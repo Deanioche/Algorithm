@@ -19,7 +19,9 @@ n	return
 5의 약수는 1, 5입니다. 이를 모두 더하면 6입니다.
 */
 
-console.log("answer is : ", solution(5));
+console.log("solution(5) : ", solution(5));
+console.log("solution(12) : ", solution(12));
+console.log("solution(31) : ", solution(31));
 
 function solution(n) { // 0 < n < 3000
     var answer = 0;
