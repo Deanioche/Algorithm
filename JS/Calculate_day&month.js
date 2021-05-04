@@ -27,10 +27,9 @@ function solution(a, b) {
 
     var totalDate = 0;
 
-    for(var i = 0; i < (a - 1); i++){
+    for(var i = 0; i < (a - 1); i++){ // add all the maxDate of (Month - 1)
 
         totalDate += month[i];
-
     }
 
     totalDate = totalDate + 4 + b;
