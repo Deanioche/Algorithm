@@ -1,7 +1,8 @@
-JS/tempCodeRunnerFile.js
+**/tempCodeRunnerFile.*
 *.class
 *.java
 *.py
 *.js
-.vscode/launch.json
+*.c
+.vscode/**
 BaekJoon/dev/stdin
