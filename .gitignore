@@ -6,3 +6,4 @@
 *.c
 .vscode/**
 BaekJoon/dev/stdin
+*.exe
