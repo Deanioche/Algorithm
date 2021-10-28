@@ -26,6 +26,17 @@ ___
 ## **4673 셀프 넘버**
 
 ```py
+n = set(range(1, 10001))
+s = set()
+
+for i in range(1, 10001):
+    for j in str(i):
+        i += int(j)
+    s.add(i)
+
+sn = sorted(n - s)
+for i in sn:
+    print(i)
 ```
 
 ```js
@@ -39,10 +50,12 @@ ___
 ## **1065 한수**
 
 ```py
+
 ```
 
 ```js
 ```
 
 ```java
+
 ```
