@@ -4,6 +4,7 @@
 *.py
 *.js
 *.c
+*.cpp
+*.exe
 .vscode/**
 BaekJoon/dev/stdin
-*.exe
