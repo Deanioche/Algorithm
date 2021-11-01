@@ -127,7 +127,61 @@ while (n <= +i[0]) {
 ```
 ___
 
-## **10809 알파벳 찾기**
+## **1157 단어 공부**
+
+```py
+s = input().rstrip().upper()
+l = [0] * 26
+for i in s:
+    l[ord(i) - 65] += 1
+
+print("?") if l.count(max(l)) > 1 else print(chr(l.index(max(l)) + 65))
+```
+
+```js
+let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().split('\n');
+let l = [...Array(26)].fill(0)
+for (s of i[0].toUpperCase())
+    l[s.charCodeAt() - 65] += 1
+if (l.filter(e => e == Math.max(...l)).length > 1) console.log("?")
+else console.log(String.fromCharCode(l.indexOf(Math.max(...l)) + 65))
+```
+
+```java
+```
+
+___
+
+## **1152 단어의 개수**
+
+```py
+print(len(list(map(str, input().split()))))
+```
+
+```js
+let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().split('\n');
+
+console.log(i[0].split(" ").filter(v => v.length > 0).length)
+```
+
+```java
+```
+
+___
+
+## **상수**
+
+```py
+```
+
+```js
+```
+
+```java
+```
+___
+
+## ****
 
 ```py
 ```
