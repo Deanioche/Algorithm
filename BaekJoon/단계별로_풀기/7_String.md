@@ -172,9 +172,43 @@ ___
 ## **상수**
 
 ```py
+print(max(map(lambda e: ''.join(reversed(e)), input().split())))
 ```
 
 ```js
+let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().trim().split('\n');
+
+console.log(Math.max(...i[0].split(" ").map(e => +e.split('').reverse().join(''))))
+```
+
+```java
+```
+___
+
+## **5622 다이얼**
+
+```py
+n = input()
+l = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+r = 0
+for s in n:
+    for i in range(len(l)):
+        if s in l[i]:
+            r += i + 3
+print(r)
+```
+
+```js
+let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().trim().split('\n');
+
+let l = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+let r = 0
+for (s of i[0].split(""))
+    for (n in l)
+        if (l[n].includes(s))
+            r += +n + 3
+
+console.log(r)
 ```
 
 ```java
