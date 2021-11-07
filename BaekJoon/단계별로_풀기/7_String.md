@@ -213,6 +213,31 @@ console.log(r)
 
 ```java
 ```
+
+___
+
+## **2941 크로아티아 알파벳**
+
+```py
+n = input().rstrip()
+
+l = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+
+for s in l:
+    n = n.replace(s, '_', -1)
+
+print(len(n))
+```
+
+```js
+let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().trim().split('\n');
+
+console.log(i[0].replace(/c\=|c\-|dz\=|d\-|lj|nj|s\=|z\=/g, "_").length)
+```
+
+```java
+```
+
 ___
 
 ## ****
@@ -224,4 +249,7 @@ ___
 ```
 
 ```java
+```
+
+```c
 ```
