@@ -232,10 +232,12 @@ print(len(n))
 ```js
 let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().trim().split('\n');
 
-console.log(i[0].replace(/c\=|c\-|dz\=|d\-|lj|nj|s\=|z\=/g, "_").length)
+console.log(i[0].replace(/c=|c-|dz=|d-|lj|nj|s=|z=/g, "_").length)
 ```
 
 ```java
+String ex = "c=|c-|dz=|d-|lj|nj|s=|z=";
+System.out.println("ljes=njak".replaceAll(ex, "_"));
 ```
 
 ___
