@@ -242,9 +242,49 @@ System.out.println("ljes=njak".replaceAll(ex, "_"));
 
 ___
 
-## ****
+## [**1316 그룹 단어 체커**](https://www.acmicpc.net/submit/1316/35251271)
 
+
+
+### **반복문 사용, 76ms**
 ```py
+c = 0
+n = int(input())
+for _ in range(n):
+    s = list(map(str, input()))
+    i = 0
+    if len(set(s)) == 1:
+        c += 1
+    else:
+        while i < len(s) - 1:
+            if s[i] == s[i + 1]:
+                s.remove(s[i + 1])
+            else:
+                i += 1
+        if len(s) == len(set(s)):
+            c += 1
+
+print(c)
+```
+
+### **eval, 함수 사용, 84ms**
+```py
+def f():
+    s = list(map(str, input()))
+    i = 0
+    if len(set(s)) == 1:
+        return 1
+    else:
+        while i < len(s) - 1:
+            if s[i] == s[i + 1]:
+                s.remove(s[i + 1])
+            else:
+                i += 1
+        return 1 if len(s) == len(set(s)) else 0
+
+
+n = int(input())
+print(sum(eval('f(),' * n)))
 ```
 
 ```js
