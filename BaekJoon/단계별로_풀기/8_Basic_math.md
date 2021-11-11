@@ -4,6 +4,12 @@
 이익이 발생하는 지점을 찾는 문제
 
 ```py
+a, b, c = map(int, input().split())
+
+if c - b <= 0:
+    print(-1)
+else:
+    print(int(a / (c - b) + 1))
 ```
 
 ```js
@@ -109,6 +115,23 @@ ___
 거리에 따른 장치 사용 횟수를 출력하는 문제
 
 ```py
+for _ in range(int(input())):
+    a, b = map(int, input().split())
+    print(int((4*(b-a)-3)**0.5))
+```
+```py
+n = int(input())
+for _ in range(n):
+    a, b = map(int, input().split())
+    cnt = 0  # 이동 횟수
+    movable = 1  # cnt마다 이동 가능거리
+    moved = 0  # 이동 거리 총합
+    while moved < b - a:  # 이동거리 < 총 거리
+        cnt += 1
+        moved += movable
+        if cnt % 2 == 0:
+            movable += 1
+    print(cnt)
 ```
 
 ```js
@@ -116,4 +139,10 @@ ___
 
 ```java
 ```
+
+표를 보면서 차분하게 공식을 일반화시켜보면 규칙을 발견해 풀 수 있다.
+
+![image](https://user-images.githubusercontent.com/66513003/141299845-6509b86c-016d-420f-9c7a-3edb9e993ec5.png)
+
+[ref](https://ooyoung.tistory.com/91)
 ___
