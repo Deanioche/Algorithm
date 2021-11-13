@@ -4,6 +4,25 @@
 2부터 X-1까지 모두 나눠서 X가 소수인지 판별하는 문제 1
 
 ```py
+input()
+m = map(int, input().split())
+print(sum(all(n % j for j in range(2, n))*n > 1 for n in m))
+```
+
+```py
+def isP(n):
+    i = 2
+    if n <= 1:
+        return False
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+input()
+m = map(int, input().split())
+print(len(list(filter(isP, m))))
 ```
 
 ```js
@@ -51,6 +70,14 @@ N을 소인수분해하는 문제
 
 ## **4	1929	 소수 구하기**
 에라토스테네스의 체로 풀어 봅시다.
+
+
+#### **# 에라토스테네스의 체**
+
+    일정 범위내 수열에서 배수들을 제거해 소수만 남기는 방법  
+    ex) 수열 [2 3 4 5 6 7 8 9 10] 에서 2의 배수 제거  
+    => [2 3 5 7 9] 에서 3의 배수 제거  
+    => [2 3 5 7]  
 
 ```py
 n, m = map(int, input().split())
@@ -105,6 +132,39 @@ int main()
         if (isP(a))
             printf("%d\n", a);
         a++;
+    }
+}
+```
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader re = new BufferedReader(new InputStreamReader(System.in));
+        String nums[] = re.readLine().split(" ");
+        int min = Integer.parseInt(nums[0]);
+        int max = Integer.parseInt(nums[1]);
+
+        for (int i = min; i < max + 1; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static Boolean isPrime(int num) {
+        if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i < 46341 && i * i <= num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 ```
