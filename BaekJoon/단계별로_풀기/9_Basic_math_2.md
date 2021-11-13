@@ -39,6 +39,29 @@ ___
 2부터 X-1까지 모두 나눠서 X가 소수인지 판별하는 문제 2
 
 ```py
+def isP(n):
+    i = 2
+    if n <= 1:
+        return False
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+
+n = int(input())
+m = int(input())
+s = []
+for i in range(n, m+1):
+    if isP(i):
+        s.append(i)
+
+if len(s) > 0:
+    print(sum(s))
+    print(s[0])
+else:
+    print(-1)
 ```
 
 ```js
@@ -54,6 +77,29 @@ ___
 ## **3	11653	 소인수분해**
 
 ```py
+def isP(n):
+    i = 2
+    if n <= 1:
+        return False
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+
+n = int(input())
+
+s = []
+if isP(n):
+    print(n)
+else:
+    while n != 1:
+        for i in range(2, n + 1):
+            if n % i == 0:
+                print(i)
+                n = int(n / i)
+                break
 ```
 
 ```js
