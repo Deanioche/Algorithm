@@ -162,7 +162,24 @@ let lst = input.map(e => +e % 42);
 console.log((new Set(lst)).size);
 ```
 
-```java
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int c[42] = {0};
+    int r = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%d", &r);
+        c[r % 42]++;
+    }
+    r = 0;
+    for (int i = 0; i < 42; i++)
+        if (c[i] != 0)
+            r++;
+    printf("%d", r);
+}
 ```
 ___
 
