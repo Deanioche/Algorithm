@@ -36,7 +36,7 @@ for i in sorted(l):
 ```js
 ```
 ___
-어려운 알고리즘이므로 지금은 언어에 내장된 정렬 함수를 쓰는 것을 추천드립니다.
+
 ## **3	10989	 수 정렬하기 3**
 수의 범위가 작다면 카운팅 정렬을 사용하여 더욱 빠르게 정렬할 수 있습니다.
 
@@ -52,7 +52,6 @@ ___
 
 ## **4	2108	 통계학	**
 정렬을 활용하는 문제
-## **5	1427	 소트인사
 
 ```py
 ```
@@ -62,10 +61,36 @@ ___
 
 ```js
 ```
+
+## **5	1427	 소트인사이드
+
+```py
+print(''.join(sorted([i for i in input()], reverse=1)))
+```
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    long long int n;
+    int a[10] = {0};
+    scanf("%llu", &n);
+    n *= 10;
+    while (n /= 10)
+        a[n % 10]++;
+    for (int i = 9; i >= 0; i--)
+        while (a[i]--)
+            printf("%d", i);
+}
+```
+
+```js
+```
 ___
 이드**
 숫자를 정렬하는 문제
-## **6	11650	 좌표 정렬하기*
+## **6	11650	 좌표 정렬하기**
 
 ```py
 ```
@@ -81,6 +106,18 @@ ___
 ## **7	11651	 좌표 정렬하기 2
 
 ```py
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+l = []
+for _ in range(n):
+    a, b = map(int, input().split())
+    l.append([b, a])
+
+l.sort()
+for i in l:
+    print(i[1], i[0])
 ```
 
 ```c
