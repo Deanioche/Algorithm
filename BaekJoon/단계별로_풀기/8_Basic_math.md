@@ -95,6 +95,16 @@ ___
 달팽이의 움직임을 계산하는 문제
 
 ```py
+u, d, g = map(int, input().split())
+t = (g-d)//(u-d)
+if(g-d) % (u-d):
+    t += 1
+print(t)
+```
+
+```py
+u, d, g = map(int, input().split())
+print(1-(g-u)//(d-u))
 ```
 
 ```js
@@ -106,8 +116,27 @@ ___
 
 ## **5	10250	 ACM 호텔**
 호텔 방 번호의 규칙을 찾아 출력하는 문제
+Y : 층, X: 방번호
+YYXX 101 ~ 9999
+
+Y++ 101 201 301 ... 9901 -> 1 ~ Y
+X++ 102 202 302 ... 9902
+
+5 10 10
+501 [502] 503
+401  402  403
+301  302  303
+201  202  203
+101  102  103
+
 
 ```py
+for _ in range(int(input())):
+    x, y, n = map(int, input().split())
+    print(((n-1) % x+1)*100+(n-1)//x+1)
+```
+```py
+exec('h,w,n=map(int,input().split());n-=1;print((n%h+1)*100+n//h+1);'*int(input()))
 ```
 
 ```js
