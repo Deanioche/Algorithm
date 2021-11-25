@@ -164,7 +164,40 @@ let i = require('fs').readFileSync(__dirname + '/dev/stdin').toString().split('\
 console.log(i[0].split(" ").filter(v => v.length > 0).length)
 ```
 
-```java
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char const *argv[])
+{
+    char t[1000000];
+    char *t1 = t;
+    scanf("%[^\n]s", t);
+    int i = 0;
+    int l = strlen(t) - 1;
+    while (t[i] == 32)
+        i++;
+    while (t[l] == 32)
+        l--;
+    int wc = 0;
+    int n = 1;
+
+    while (*(t1++))
+    {
+    }
+
+    for (i; i <= l; i++)
+    {
+        if (t[i] != 32 && n == 1)
+        {
+            wc++;
+            n = 0;
+        }
+        else if (t[i] == 32)
+            n = 1;
+    }
+    printf("%d", wc);
+}
 ```
 
 ___
