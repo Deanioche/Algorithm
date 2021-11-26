@@ -60,21 +60,29 @@ ___
 ## **2914	 저작권	**
 
 ```py
+a, b = map(int, input().split())
 
+print(a * (b - 1) + 1)
 ```
 ___
 
 ## **3003	 킹, 퀸, 룩, 비숍, 나이트, 폰**
 
 ```py
+l = list(map(int, input().split()))
+o = [1, 1, 2, 2, 2, 8]
 
+for i in [a - b for a, b in zip(o, l)]:
+    print(i, end=" ")
 ```
 ___
 
 ## **3046	 R2**
 
 ```py
+a, b = map(int, input().split())
 
+print(b * 2 - a)
 ```
 ___
 
@@ -353,27 +361,32 @@ ___
 ## **20492	 세금**
 
 ```py
-
+n = int(input())
+print(int(n / 100 * 78), int(n / 100 * 20 / 100 * 78 + n / 100 * 80))
 ```
 ___
 
-## **21300	 Bottle Return**
+### **21300	 Bottle Return**
 
 ```py
+l = list(map(int, input().split()))
 
+print(sum(l) * 5)
 ```
 ___
 
-## **22193	 Multiply**
+### **22193	 Multiply**
 
 ```py
+input()
 
+print(int(input()) * int(input()))
 ```
 ___
 
-## **23234	 The World Responds**
+### **23234	 The World Responds**
 
 ```py
-
+print("The world says hello!")
 ```
 ___
