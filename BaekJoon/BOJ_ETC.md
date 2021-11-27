@@ -1,6 +1,16 @@
 # **ETC**
 
-## **2839**
+## **1085 직사각형에서 탈출**
+
+```py
+import sys
+input = sys.stdin.readline
+x, y, w, h = map(int, input().split())
+
+print(min(list(map(abs, [w-x, h-y, 0-x, 0-y]))))
+```
+
+## **2839 설탕 배달**
 
 ```cpp
 #include <stdio.h>
@@ -29,7 +39,7 @@ int main()
 }
 ```
 
-## **20300**
+## **20300 서강근육맨**
 
 ```py
 import sys
@@ -55,7 +65,7 @@ print(j if j > m else m)
 
 ___
 
-## **20299**
+## **20299 3대 측정**
 
 ```cpp
 #include <stdio.h>
