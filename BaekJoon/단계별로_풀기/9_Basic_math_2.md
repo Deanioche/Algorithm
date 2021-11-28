@@ -252,6 +252,11 @@ ___
 직사각형과 점의 거리를 구하는 문제
 
 ```py
+import sys
+input = sys.stdin.readline
+x, y, w, h = map(int, input().split())
+
+print(min(list(map(abs, [w-x, h-y, 0-x, 0-y]))))
 ```
 
 ```js
