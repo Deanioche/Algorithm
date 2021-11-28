@@ -1,14 +1,21 @@
 # **ETC**
 
-## **1085 직사각형에서 탈출**
-
+## **1259 펠린드롬수**
 ```py
-import sys
-input = sys.stdin.readline
-x, y, w, h = map(int, input().split())
-
-print(min(list(map(abs, [w-x, h-y, 0-x, 0-y]))))
+while 1:
+    l = input().rstrip()
+    r = 0
+    if l == "0":
+        break
+    m = len(l)
+    n = m - 1 if m % 2 else m
+    for i in range(0, n // 2):
+        if l[i] != l[m - i - 1]:
+            r = 1
+            break
+    print("no" if r else "yes")
 ```
+___
 
 ## **2839 설탕 배달**
 
@@ -38,6 +45,7 @@ int main()
     return 0;
 }
 ```
+___
 
 ## **20300 서강근육맨**
 
