@@ -30,7 +30,19 @@ for i in sorted(l):
     print(i)
 ```
 
-```c
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    set<int> s;
+    int n, f;
+    scanf("%d", &n);
+    for (n; n--; s.insert(f))
+        scanf("%d", &f);
+    for (auto i : s)
+        printf("%d\n", i);
+}
 ```
 
 ```js

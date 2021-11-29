@@ -229,9 +229,50 @@ ___
 ## **Silver V	 2751	수 정렬하기 2**
 
 ```py
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+l = []
+while n:
+    n -= 1
+    l.append(int(input()))
+
+for i in sorted(l):
+    print(i)
 ```
 
 ```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    set<int> s;
+    int n, f;
+    scanf("%d", &n);
+    for (n; n--; s.insert(f))
+        scanf("%d", &f);
+    for (auto i : s)
+        printf("%d\n", i);
+}
+```
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+    int n, i;
+    scanf("%d", &n);
+    vector<int> arr(n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    sort(arr.begin(), arr.end());
+    for (i = 0; i < n; i++)
+        printf("%d\n", arr[i]);
+
+    return 0;
+}
 ```
 
 ```js
@@ -476,12 +517,59 @@ ___
 ## **Silver V	 11650	좌표 정렬하기 STANDARD**
 
 ```py
+import sys
+input = sys.stdin.readline
+n = int(input())
+l = []
+for _ in range(n):
+    a, b = map(int, input().split())
+    l.append([a, b])
+
+for i in sorted(l):
+    print(i[0], i[1])
+```
+
+```py
+for i in sorted([[*map(int, s.split())]for s in open(0)][1:]):
+    print(*i)
 ```
 
 ```cpp
+#include <stdio.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    vector<pair<int, int>> v;
+
+    for (int i = 0; i < n; i++)
+    {
+        int x, y;
+        scanf("%d %d", &x, &y);
+        v.push_back(make_pair(x, y));
+    }
+    sort(v.begin(), v.end());
+
+    for (int i = 0; i < n; i++)
+        printf("%d %d\n", v[i].first, v[i].second);
+}
 ```
 
-```js
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int n, a, b;
+set<pair<int, int>> s;
+main()
+{
+    for (cin >> n; n--; s.insert({a, b}))
+        scanf("%d %d", &a, &b);
+    for (auto i : s)
+        printf("%d %d\n", i.first, i.second);
 ```
 
 ___
