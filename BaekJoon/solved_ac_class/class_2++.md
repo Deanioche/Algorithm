@@ -31,6 +31,22 @@ ___
 ## **Silver V	 1181	단어 정렬**
 
 ```py
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+l = set()
+while n:
+    l.add(input())
+    n -= 1
+
+for _ in sorted(sorted(list(l)), key=len):
+    print(_, end="")
+```
+
+```py
+s = sorted # vscode에서는 입력이 끝나지 않음
+print(''.join(s(s(set(open(0).readlines()[1:])), key=len)))
 ```
 
 ```cpp
