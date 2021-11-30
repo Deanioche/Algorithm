@@ -334,7 +334,19 @@ ___
 
 ## **Bronze I	 2869	달팽이는 올라가고 싶다**
 
+달팽이의 움직임을 계산하는 문제
+
 ```py
+u, d, g = map(int, input().split())
+t = (g-d)//(u-d)
+if(g-d) % (u-d):
+    t += 1
+print(t)
+```
+
+```py
+u, d, g = map(int, input().split())
+print(1-(g-u)//(d-u))
 ```
 
 ```cpp
