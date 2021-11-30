@@ -148,8 +148,31 @@ ___
 
 ## **6	2775	 부녀회장이 될테야**
 층과 거주자 수의 규칙을 찾는 문제
-
+```
+...
+001 004 010 020 035
+001 003 006 010 015
+001 002 003 004 005 ... 014
+```
 ```py
+for _ in range(int(input())):
+    a = int(input()) + 1
+    b = int(input())
+    l = [[1] * b] * a
+    l[0] = [i for i in range(1, b + 1)]
+    for i in range(1, a):
+        l[i] = [sum(l[i-1][:j]) for j in range(1, b + 1)]
+    print(l[a-1][b-1])
+```
+```py
+import math
+i = input
+for n in [int]*int(i()):
+    k = n(i())
+    print(math.comb(k+n(i()), k+1))
+# i개의 int 배열을 만든다
+# [<class 'int'>, <class 'int'>, <class 'int'>, <class 'int'>]
+# 이항계수 함수를 이용해 출력
 ```
 
 ```js
@@ -157,6 +180,9 @@ ___
 
 ```java
 ```
+001 004 010 020 035
+001 003 006 010 015
+001 002 003 004 005 ... 014
 ___
 
 ## **7	2839	 설탕 배달**
