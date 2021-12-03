@@ -1,5 +1,36 @@
 # **ETC**
 
+
+## **1213 팰린드롬 만들기**
+```py
+n = sorted(list(input().rstrip()))
+
+c = 0
+x = ""
+if len(n) == 2:
+    if n[0] != n[1]:
+        print("I'm Sorry Hansoo")
+        quit()
+
+i = 0
+l = len(n)
+while i < l:
+    if n.count(n[i]) % 2:
+        c += 1
+        x = n[i]
+        n.remove(n[i])
+        l -= 1
+        i -= 1
+    if c > 1:
+        print("I'm Sorry Hansoo")
+        quit()
+    i += 1
+
+for _ in n[::2] + [x] + n[::-2]:
+    print(_, end="")
+```
+___
+
 ## **23305 수강변경**
 
 ```py
