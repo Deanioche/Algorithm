@@ -190,6 +190,13 @@ ___
 ## **Bronze II	 2231	분해합**
 
 ```py
+n = input()
+for i in range(0, int(n)):
+    i = str(i)
+    if int(n) == sum([int(i), *map(int, i)]):
+        print(i)
+        quit()
+print(0)
 ```
 
 ```cpp
