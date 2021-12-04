@@ -367,6 +367,13 @@ ___
 ## **Bronze III	 4153	직각삼각형**
 
 ```py
+import sys
+input = sys.stdin.readline
+while 1:
+    l = sorted([*map(int, input().split())])
+    if l[0] == 0:
+        quit()
+    print("right" if l[0] * l[0] + l[1] * l[1] == l[2] * l[2] else "wrong")
 ```
 
 ```cpp
