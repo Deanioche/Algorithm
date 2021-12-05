@@ -629,7 +629,14 @@ ___
 ## **Bronze II	 15829	Hashing**
 
 ```py
+input()
+a = input().rstrip()
+n = 0
+for i, _ in enumerate(a):
+    n += (ord(_) - 96) * 31 ** i
+print(n % 1234567891)
 ```
+- 1234567891로 나머지연산을 하지 않으면 50점
 
 ```cpp
 ```
