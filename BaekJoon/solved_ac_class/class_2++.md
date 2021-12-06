@@ -517,6 +517,19 @@ ___
 ## **Silver V	 10989	수 정렬하기 3 STANDARD**
 
 ```py
+import sys
+input = sys.stdin.readline
+print = sys.stdout.write
+
+n = int(input())
+l = [0] * 10001
+
+for i in range(n):
+    l[int(input())] += 1
+
+for i in range(10001):
+    for j in range(l[i]):
+        print("%s\n" % i)
 ```
 
 ```cpp
