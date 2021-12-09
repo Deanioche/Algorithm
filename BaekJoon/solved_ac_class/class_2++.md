@@ -490,7 +490,26 @@ ___
 
 ## **Silver IV	 10845	큐**
 
+
 ```py
+import sys
+input = sys.stdin.readline
+l = []
+for _ in range(int(input())):
+    i = input().split()
+    if i[0] == "push":
+        l += [i[1]]
+        # print(i[1])
+    elif i[0] == "front":
+        print(l[0] if len(l) else -1)
+    elif i[0] == "back":
+        print(l[-1] if len(l) else -1)
+    elif i[0] == "size":
+        print(len(l))
+    elif i[0] == "empty":
+        print(0 if len(l) else 1)
+    elif i[0] == "pop":
+        print(l.pop(0) if len(l) else -1)
 ```
 
 ```cpp
@@ -542,8 +561,18 @@ ___
 
 ## **Bronze I	 11050	이항 계수 1**
 
+[ref](https://shoark7.github.io/programming/algorithm/3-ways-to-get-binomial-coefficients)
 ```py
+def f(n):
+    r = 1
+    for i in range(2, n+1):
+        r *= i
+    return r
+
+a, b = map(int, input().split())
+print(f(a) // f(b) // f(a-b))
 ```
+
 
 ```cpp
 ```
