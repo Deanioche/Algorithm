@@ -98,7 +98,101 @@ ___
 
 ## **Silver III	 1874	스택 수열**
 
+- 4까지 push * 4
+```
+[0, 1, 2, 3, 4]
+['+', '+', '+', '+']
+i = 5
+```
+- 4, 3 pop * 2
+```
+[0, 1, 2]
+['+', '+', '+', '+', '-', '-']
+i = 5
+```
+- 6까지 push * 2
+```
+[0, 1, 2, 5, 6]
+['+', '+', '+', '+', '-', '-', '+', '+']
+i = 7
+```
+- 6 pop * 1
+```
+[0, 1, 2, 5]
+['+', '+', '+', '+', '-', '-', '+', '+', '-']
+i = 7
+```
+- 8까지 push * 2
+```
+[0, 1, 2, 5, 7, 8]
+['+', '+', '+', '+', '-', '-', '+', '+', '-', '+', '+']
+i = 9
+```
+- 8, 7 pop * 2
+```
+[0, 1, 2, 5]
+['+', '+', '+', '+', '-', '-', '+', '+', '-', '+', '+', '-', '-']
+i = 9
+```
+- 5 pop * 1
+```
+[0, 1, 2]
+['+', '+', '+', '+', '-', '-', '+', '+', '-', '+', '+', '-', '-', '-']
+i = 9
+```
+- 2 pop * 1
+```
+[0, 1]
+['+', '+', '+', '+', '-', '-', '+', '+', '-', '+', '+', '-', '-', '-', '-']
+i = 9
+```
+- 1 pop * 1
+```
+[0]
+['+', '+', '+', '+', '-', '-', '+', '+', '-', '+', '+', '-', '-', '-', '-', '-']
+i = 9
+```
 ```py
+import sys
+w = sys.stdin.readline
+l = []
+r = []
+i = 1
+s = False
+for _ in range(int(w())):
+    n = int(w())
+    while i <= n:
+        l.append(i)
+        r += '+'
+        i += 1
+    if l[-1] == n:
+        r += '-'
+        l.pop()
+    else:
+        s = True
+
+if s:
+    print("NO")
+else:
+    print(*(_ for _ in r), sep="\n")
+```
+
+```py
+import sys
+w = sys.stdin.readline
+i, l, r = 0, [], []
+for _ in range(int(w())):
+    n = int(w())
+    if l and l[-1] > n:
+        print('NO')
+        exit()
+    while not l or l[-1] < n:
+        i += 1
+        l += [i]
+        r += '+'
+    l.pop()
+    r += '-'
+print('\n'.join(r))
 ```
 
 ```cpp
@@ -223,6 +317,29 @@ ___
 ## **Silver V	 2609	최대공약수와 최소공배수**
 
 ```py
+import math
+
+a, b = map(int, input().split())
+
+print(math.gcd(a, b))
+print(math.lcm(a, b))
+```
+
+```py
+import sys
+input = sys.stdin.readline
+a, b = map(int, input().split())
+
+def gcd(a, b):
+    while b > 0:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+print(gcd(a, b))
+print(lcm(a, b))
 ```
 
 ```cpp
@@ -657,7 +774,48 @@ ___
 
 ## **Silver IV	 11866	요세푸스 문제 0**
 
+**# 덱 사용** 31864 kb 132 ms
 ```py
+from collections import deque as d
+import sys
+input = sys.stdin.readline
+print = sys.stdout.write
+
+q = d()
+r = []
+n, k = map(int, input().split())
+
+for i in range(1, n+1):
+    q.append(i)
+
+while q:
+    for i in range(k-1):
+        q.append(q.popleft())
+    r.append(q.popleft())
+
+print("<")
+for i in range(len(r)-1):
+    print("%d, " % r[i])
+print("%s" % r[-1])
+print(">")
+```
+29200 kb 68 ms
+```py
+n, k = map(int, input().split())
+q = [i for i in range(1, n+1)]
+i = 0
+
+print("<", end='')
+while len(q) > 1:
+    i = i+k
+    if i > len(q):
+        i = i % len(q)
+        if i == 0:
+            i = i + len(q)
+    i = i-1
+    print(str(q.pop(i)), end=", ")
+
+print("{}>".format(str(q.pop())))
 ```
 
 ```cpp
