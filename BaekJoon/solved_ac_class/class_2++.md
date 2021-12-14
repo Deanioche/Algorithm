@@ -420,6 +420,24 @@ ___
 ## **Bronze II	 2798	블랙잭**
 
 ```py
+from itertools import combinations as c
+n, t = map(int, input().split())
+l = map(int, input().split())
+print(max(i for i in map(sum, c(l, 3))if i <= t))
+```
+
+```py
+n, t = map(int, input().split())
+l = list(map(int, input().split()))
+r = 0
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            if l[i] + l[j] + l[k] > t:
+                continue
+            else:
+                r = max(r, l[i]+l[j]+l[k])
+print(r)
 ```
 
 ```cpp
