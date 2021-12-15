@@ -3,9 +3,48 @@
 ## **Silver V	 1018	체스판 다시 칠하기**
 
 ```py
+import sys
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+l = [input() for _ in range(N)]
+w = 65
+for a in range(N-7):
+    for b in range(M-7):
+        r = 0
+        for x in range(a, a+8):
+            for y in range(b, b+8):
+                if l[x][y] == ('W'if x % 2 == y % 2 else'B'):
+                    r += 1
+        w = min(r, 64-r, w)
+print(w)
 ```
 
 ```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int N, M, w = 65;
+    scanf("%d %d", &N, &M);
+    char l[N][M + 1];
+    for (int a = 0; a < N; a++)
+        scanf("%s", l[a]);
+
+    for (int a = 0; a < N - 7; a++)
+        for (int b = 0; b < M - 7; b++)
+        {
+            int r = 0;
+            for (int x = a; x < a + 8; x++)
+                for (int y = b; y < b + 8; y++)
+                    if (l[x][y] == ((x % 2 == y % 2) ? 'W' : 'B'))
+                        r++;
+            int v[] = {r, 64 - r, w};
+            w = *min_element(v, v + 3);
+        }
+    printf("%d", w);
+}
 ```
 
 ```js
