@@ -298,6 +298,45 @@ for i in m:
 ```
 
 ```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n[100001], m[100001];
+
+void fast_io()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+int BS(int arr[], int start, int end, int target)
+{
+    if (start > end)
+        return 0;
+    int mid = (start + end) / 2;
+    if (target == arr[mid])
+        return 1;
+    else if (target < arr[mid])
+        return BS(arr, start, mid - 1, target);
+    else
+        return BS(arr, mid + 1, end, target);
+}
+
+int main()
+{
+    int N, M, i;
+    fast_io();
+    cin >> N;
+    for (i = 0; i < N; i++)
+        cin >> n[i];
+    sort(n, n + N);
+    cin >> M;
+    for (i = 0; i < M; i++)
+        cin >> m[i];
+    for (i = 0; i < M; i++)
+        cout << BS(n, 0, N - 1, m[i]) << "\n";
+}
 ```
 
 ```js

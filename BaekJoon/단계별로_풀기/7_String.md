@@ -171,7 +171,6 @@ console.log(i[0].split(" ").filter(v => v.length > 0).length)
 int main(int argc, char const *argv[])
 {
     char t[1000000];
-    char *t1 = t;
     scanf("%[^\n]s", t);
     int i = 0;
     int l = strlen(t) - 1;
@@ -181,11 +180,6 @@ int main(int argc, char const *argv[])
         l--;
     int wc = 0;
     int n = 1;
-
-    while (*(t1++))
-    {
-    }
-
     for (i; i <= l; i++)
     {
         if (t[i] != 32 && n == 1)
