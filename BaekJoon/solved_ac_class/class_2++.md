@@ -244,7 +244,57 @@ ___
 
 ## **Silver IV	 1920	수 찾기**
 
+https://chancoding.tistory.com/44
+
 ```py
+import sys
+w = sys.stdin.readline
+
+def BS(arr, start, end, target):
+    if start == (end-1):
+        if target == arr[start] or target == arr[end]:
+            return 1
+        else:
+            return 0
+    mid = (start + end)//2
+    if arr[mid] > target:
+        return BS(arr, start, mid, target)
+    elif arr[mid] < target:
+        return BS(arr, mid, end, target)
+    else:
+        return 1
+
+N = int(w())
+n = sorted(map(int, w().split()))
+M = int(w())
+m = map(int, w().split())
+
+for i in m:
+    print(BS(n, 0, N-1, i))
+```
+
+```py
+import sys
+w = sys.stdin.readline
+
+def BS(arr, start, end, target):
+    if start > end:
+        return 0
+    mid = (start+end)//2
+    if target == arr[mid]:
+        return 1
+    elif target < arr[mid]:
+        return BS(arr, start, mid-1, target)
+    else:
+        return BS(arr, mid+1, end, target)
+
+N = int(w())
+n = sorted(map(int, w().split()))
+M = int(w())
+m = map(int, w().split())
+
+for i in m:
+    print(BS(n, 0, N-1, i))
 ```
 
 ```cpp
@@ -587,9 +637,78 @@ ___
 ## **Silver IV	 9012	괄호**
 
 ```py
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+for _ in range(N):
+    r = 0
+    l = input().rstrip()
+    for i in range(len(l)):
+        if r > 0:
+            break
+        if l[i] == '(':
+            r -= 1
+        elif l[i] == ')':
+            r += 1
+    print("YES" if r == 0 else "NO")
+```
+
+```py
+import sys
+input = sys.stdin.readline
+
+for _ in '_'*int(input()):
+    s = input().strip()
+    for _ in s:
+        s = s.replace('()', '')
+    print(['YES', 'NO'][s > ''])
 ```
 
 ```cpp
+#include <bits/stdc++.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    while (n--)
+    {
+        char s[51];
+        int r = 0;
+        scanf("%s", s);
+        for (int i = 0; i < strlen(s); i++)
+        {
+            if (r > 0)
+                break;
+            else if (s[i] == '(')
+                r--;
+            else if (s[i] == ')')
+                r++;
+        }
+        printf(r == 0 ? "YES\n" : "NO\n");
+    }
+}
+```
+
+```cpp
+#include <bits/stdc++.h>
+
+int main()
+{
+    int n, r, i;
+    scanf("%d", &n);
+
+    while (n--)
+    {
+        char s[51];
+        scanf("%s", s);
+        for (i = r = 0; s[i] && r <= 0; i++)
+            r += (s[i] == '(' ? -1 : 1);
+        printf(r == 0 ? "YES\n" : "NO\n");
+    }
+}
 ```
 
 ```js
