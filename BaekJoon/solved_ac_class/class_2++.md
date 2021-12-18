@@ -399,6 +399,18 @@ ___
 ## **Silver IV	 2164	카드2**
 
 ```py
+import sys
+n = int(sys.stdin.readline())
+
+l = [i for i in range(1, n + 1)]
+
+while (len(l) != 1):
+    if len(l) % 2:
+        l = [l[-1]] + l[1::2]
+    else:
+        l = l[1::2]
+
+print(l[0])
 ```
 
 ```cpp
