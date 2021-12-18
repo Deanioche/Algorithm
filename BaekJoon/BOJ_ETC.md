@@ -1,6 +1,23 @@
 # **ETC**
 ___
 
+## **[INU 코드페스티벌 2021 Open Contest] A. 데칼코마니**
+
+```py
+import sys
+input = sys.stdin.readline
+h, w = map(int, input().split())
+for _ in range(h):
+    r = input().rstrip()
+    h = w//2
+    a = list(r[:h])
+    b = list(r[h:][::-1])
+    for i in range(h):
+        if b[i] != "." and a[i] == ".":
+            a[i] = b[i]
+    print("".join(a + a[::-1]))
+```
+
 ## **23738 Ресторан**
 
 ```py
