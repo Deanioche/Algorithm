@@ -808,8 +808,37 @@ ___
 
 ## **Silver IV	 10816	숫자 카드 2**
 
-```py
-```
+- **딕셔너리** 이용
+- m 순서대로 출력하기.(m의 원소는 중복될 수 있음)
+
+    ```py
+    import sys
+    w = sys.stdin.readline
+    w()
+    n = [*map(int, w().split())]
+    w()
+    m = [*map(int, w().split())]
+
+    d = dict.fromkeys(n, 0)
+    d.update(dict.fromkeys(m, 0))
+
+    for i in n:
+        d[i] += 1
+
+    for i in m:
+        sys.stdout.write("%d " % d[i])
+    ```
+
+- collections 모듈 **Counter 클래스** 이용
+    ```py
+    import sys
+    from collections import Counter
+    w = sys.stdin.readline
+    w()
+    cnt = Counter(w().split())
+    w()
+    print(*(f'{cnt[x]}' for x in w().split()))
+    ```
 
 ```cpp
 ```
@@ -822,6 +851,27 @@ ___
 ## **Silver IV	 10828	스택**
 
 ```py
+import sys
+w = sys.stdin.readline
+
+l = []
+for _ in range(int(w())):
+    a = w().split()
+    if a[0] == "push":
+        l.append(a[1])
+    elif a[0] == "top":
+        if len(l):
+            print(l[-1])
+        else:
+            print(-1)
+    elif a[0] == "pop":
+        print(l[-1] if len(l) else -1)
+        if len(l):
+            l.pop()
+    elif a[0] == "size":
+        print(len(l))
+    elif a[0] == "empty":
+        print(0 if len(l) else 1)
 ```
 
 ```cpp
@@ -867,6 +917,51 @@ ___
 ## **Silver IV	 10866	덱**
 
 ```py
+import sys
+w = sys.stdin.readline
+
+l = []
+for _ in range(int(w())):
+    a = w().split()
+    if a[0] == "push_front":
+        l = [a[1]] + l
+    if a[0] == "push_back":
+        l.append(a[1])
+    elif a[0] == "front":
+        if len(l):
+            print(l[0])
+        else:
+            print(-1)
+    elif a[0] == "back":
+        if len(l):
+            print(l[-1])
+        else:
+            print(-1)
+    elif a[0] == "pop_front":
+        print(l[0] if len(l) else -1)
+        if len(l):
+            l.pop(0)
+    elif a[0] == "pop_back":
+        print(l[-1] if len(l) else -1)
+        if len(l):
+            l.pop()
+    elif a[0] == "size":
+        print(len(l))
+    elif a[0] == "empty":
+        print(0 if len(l) else 1)
+```
+
+```py
+n,*l=open(0);a,p=[],print
+for i in l:
+if"h_f"in(q:=(j:=i.split())[0]):a=[j[1]]+a
+elif"h_b"in q:a+=[j[1]]
+elif"p_f"in q:p(a.pop(0)if a else-1)
+elif"p_b"in q:p(a.pop()if a else-1)
+elif"i"in q:p(len(a))
+elif"m"in q:p(+(len(a)<1))
+elif"r"in q:p(a[0]if a else-1)
+else:p(a[len(a)-1]if a else-1)
 ```
 
 ```cpp
