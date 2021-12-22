@@ -114,21 +114,38 @@ ___
 ## **5522	 카드 게임**
 
 ```py
+import sys
+w = sys.stdin.readline
+r = 0
+for _ in range(5):
+    r += int(w())
 
+print(r)
 ```
 ___
 
 ## **5554	 심부름 가는 길**
 
 ```py
+import sys
+w = sys.stdin.readline
+r = 0
+for _ in range(4):
+    r += int(w())
 
+print(r // 60)
+print(r % 60)
 ```
 ___
 
 ## **6749	 Next in line**
 
 ```py
-
+import sys
+w = sys.stdin.readline
+a = int(w())
+b = int(w())
+print(b + (b - a))
 ```
 ___
 
@@ -205,7 +222,7 @@ ___
 ## **11942	 고려대는 사랑입니다**
 
 ```py
-
+print("고려대학교")
 ```
 ___
 
