@@ -674,7 +674,22 @@ ___
 
 ## **Silver V	 7568	덩치**
 
+- 브루트포스
 ```py
+import sys
+w = sys.stdin.readline
+
+n = int(w())
+l = []
+for _ in range(n):
+    l += [[*map(int, w().split())]]
+
+for i in l:
+    r = 1
+    for j in l:
+        if i[0] < j[0] and i[1] < j[1]:
+            r += 1
+    print(r, end=" ")
 ```
 
 ```cpp
@@ -783,6 +798,15 @@ ___
 ## **Silver IV	 10773	제로**
 
 ```py
+import sys
+w = sys.stdin.readline
+
+l = []
+for _ in range(int(w())):
+    n = int(w())
+    l.pop() if n == 0 else l.append(n)
+print(sum(l))
+
 ```
 
 ```cpp
