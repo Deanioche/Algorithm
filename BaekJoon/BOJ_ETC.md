@@ -1,4 +1,16 @@
 # **ETC**
+
+___
+
+## **10872 팩토리얼 B3**
+
+```py
+import math
+import sys
+w = sys.stdin.readline
+
+print(math.factorial(int(w())))
+```
 ___
 
 ## **[INU 코드페스티벌 2021 Open Contest] A. 데칼코마니**
