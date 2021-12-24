@@ -1,6 +1,14 @@
 # **ETC**
 
 ___
+## **1297 TV 크기**
+
+```py
+d, h, w = map(int, input().split())
+a = (h ** 2 + w ** 2) ** 0.5
+print(*map(int, [h*d//a, w*d//a]))
+```
+___
 
 ## **10872 팩토리얼 B3**
 
