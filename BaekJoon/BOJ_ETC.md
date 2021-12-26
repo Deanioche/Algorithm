@@ -1,6 +1,22 @@
 # **ETC**
 
 ___
+## **1075 나누기**
+
+```py
+import sys
+w = sys.stdin.readline
+N = int(w())
+F = int(w())
+
+N = N - N % 100
+print(f"{100 + F - N % F}"[-2:] if N % F else "00"
+```
+```py
+N, F = int(input()), int(input())
+print(f"{(N % 100 - N % F) % F}".zfill(2))
+```
+___
 ## **1297 TV 크기**
 
 ```py
