@@ -218,6 +218,14 @@ ___
 
 ## **10991	 별 찍기 - 16**
 ```py
+import sys
+p = sys.stdout.write
+n = int(input())
+for i in range(1, n + 1):
+    p(" " * (n - i))
+    for j in range(i):
+        p('* ')
+    p('\n')
 ```
 
 ___
