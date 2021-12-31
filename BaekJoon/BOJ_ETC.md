@@ -1,5 +1,21 @@
 # **ETC**
 
+
+## **1284 집 주소**
+
+```py
+while True:
+    n = input()
+    c = 1
+    if n == "0":
+        break
+    for i in n:
+        if i == "1": c += 2
+        elif i == "0": c += 4
+        else : c += 3
+        c += 1
+    print(c)
+```
 ___
 ## **2752 세수정렬**
 
