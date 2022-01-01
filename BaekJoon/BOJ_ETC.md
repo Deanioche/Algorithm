@@ -1,5 +1,31 @@
 # **ETC**
 
+## **24039 2021은 무엇이 특별할까?**
+
+```py
+n = int(input())
+tmp = 2
+
+l = [0] * 10001
+l[1] = 1
+
+for i in range(2, len(l)):
+    if l[i] != 1:
+        j = 2
+        while i * j <= n:
+            l[i * j] = 1
+            j += 1
+
+for i in range(3, len(l)):
+    if l[i] == 0:
+        if tmp * i > n:
+            print(tmp * i)
+            exit()
+        else:
+            tmp = i
+```
+
+___
 
 ## **1284 집 주소**
 
