@@ -1,5 +1,23 @@
 # **ETC**
 
+
+## **1547 공**
+
+```py
+import sys
+w = sys.stdin.readline
+n = int(w())
+l = [0, 1, 0, 0]
+for _ in range(n):
+    a, b = map(int, w().split())
+    t = l[a]
+    l[a] = l[b]
+    l[b] = t
+
+print(l.index(1))
+```
+___
+
 ## **24039 2021은 무엇이 특별할까?**
 
 ```py
