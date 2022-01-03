@@ -1,5 +1,14 @@
 # **ETC**
 
+## **2163 초콜릿 자르기**
+```py
+import sys
+w = sys.stdin.readline
+n, m = map(int, w().split())
+print(n * m - 1)
+```
+
+___
 
 ## **1547 공**
 
