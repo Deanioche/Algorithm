@@ -1,5 +1,53 @@
 # **ETC**
 
+
+## **1620 나는야 포켓몬 마스터 이다솜**
+
+```cpp
+#include <iostream>
+#include <string.h>
+#include <map>
+
+using namespace std;
+
+void fast_io(void)
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+
+int main()
+{
+    fast_io();
+
+    map<int, string> mp;
+    map<string, int> pm;
+    int n, m, i = 0;
+
+    cin >> n >> m;
+
+    while(n--)
+    {
+        string s;
+        cin >> s;
+        i++;
+        mp.insert(make_pair(i, s));
+        pm.insert(make_pair(s, i));
+    }
+    while (m--)
+    {
+        char s[21];
+        cin >> s;
+        if(isdigit(s[0]))
+            cout << mp.find(atoi(s))->second << "\n";
+        else
+            cout << pm.find(s)->second << "\n";
+        }
+}
+```
+___
+
 ## **2163 초콜릿 자르기**
 ```py
 import sys
