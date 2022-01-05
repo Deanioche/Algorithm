@@ -1,6 +1,18 @@
 # **ETC**
 
 
+## **2720 세탁소 사장 동혁**
+
+```py
+import sys
+# p = sys.stdout.write
+w = sys.stdin.readline
+n = int(w())
+for _ in range(n):
+    m = int(w())
+    print(m // 25, m % 25 // 10, m % 25 % 10 // 5, m % 25 % 10 % 5)
+```
+___
 ## **1620 나는야 포켓몬 마스터 이다솜**
 
 ```cpp
