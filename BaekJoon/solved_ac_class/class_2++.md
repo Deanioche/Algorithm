@@ -125,12 +125,95 @@ ___
 ## **Silver III	 1654	랜선 자르기**
 
 ```py
+import sys
+w = sys.stdin.readline
+
+N, K = map(int, w().split())
+l = [int(w()) for _ in range(N)]
+
+s, e = 1, max(l)
+
+while s <= e:
+    m = (s + e) // 2
+    r = 0
+    for i in l:
+        r += i // m
+
+    if r >= K:
+        s = m + 1
+    else:
+        e = m - 1
+print(e)
 ```
 
 ```cpp
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+void fast_io(void)
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+
+int main(int argc, char const *argv[])
+{
+    long long N, K;
+
+    cin >> N >> K;
+
+    long long arr[N];
+    long long ll[N];
+    for (int i = 0; i < N; i++){
+        long long tmp;
+        cin >> tmp;
+        arr[i] = tmp;
+        ll[i] = tmp;
+    }
+
+    long long start = 1, *end = max_element(arr, arr + N);
+
+        while (start <= *end)
+    {
+        long long mid = (start + *end) / 2;
+        long long r = 0;
+        for(long long i : ll )
+            r += i / mid;
+        
+        if (r >= K)
+            start = mid + 1;
+        else
+            *end = mid - 1;
+    }
+
+    cout << *end;
+    return 0;
+}
 ```
 
 ```js
+let w = require('fs').readFileSync(__dirname + '/dev/stdin').toString().split('\n');
+
+const [K, N] = w.shift().split(" ").map(Number);
+const l = w.map(Number);
+let [s, e] = [1, Math.max(...l)]
+
+while (s <= e) {
+    let mid = parseInt((s + e) / 2)
+    let r = 0;
+
+    for (i of l)
+        r += parseInt(i / mid);
+    if (r >= N)
+        s = mid + 1;
+    else
+        e = mid - 1;
+}
+console.log(e)
+
 ```
 
 ___
