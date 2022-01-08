@@ -745,6 +745,32 @@ ___
 ## **Silver IV	 4949	균형잡힌 세상**
 
 ```py
+import sys
+w = sys.stdin.readline
+
+while True:
+    l = w().rstrip()
+    s = []
+
+    if l == '.':
+        break
+    
+    for i in l:
+        if i in ['(', '[']:
+            s += i
+        elif i == ']':
+            if len(s) and s[-1] == '[':
+                s.pop()
+            else:
+                s += i
+                break
+        elif i == ')':
+            if len(s) and s[-1] == '(':
+                s.pop()
+            else:
+                s += i
+                break
+    print('no' if len(s) else 'yes')
 ```
 
 ```cpp
