@@ -469,9 +469,85 @@ ___
 ## **Silver IV	 2108	통계학**
 
 ```py
+import sys
+from collections import Counter
+w = sys.stdin.readline
+p = sys.stdout.write
+
+n = int(w())
+l = []
+
+def r(n):
+    if int(n) % 2:
+        return round(n)
+    else:
+        if n > 0:
+            return round(n + 0.1)
+        else:
+            return round(n - 0.1)
+
+
+for _ in range(n):
+    l.append(int(w()))
+
+l.sort()
+t = len(l)
+p("%d\n" % r(sum(l) / t))
+p("%d\n" % l[t // 2])
+
+c = Counter(l).most_common(2)
+if t > 1:
+    if c[0][1] == c[1][1]:
+        p("%d\n" % c[1][0])
+    else:
+        p("%d\n" % c[0][0])
+else:
+    p("%d\n" % c[0][0])
+
+p("%d\n" % (l[-1] - l[0]))
+```
+
+```py
+from statistics import*
+import sys
+
+w = sys.stdin.readline
+
+n = int(w())
+l = [int(w()) for _ in range(n)]
+    
+sys.stdout.write('%.0f %d %d %d' % (mean(l), median(l), sorted(multimode(l))[:2][-1], max(l)-min(l)))
 ```
 
 ```cpp
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+int a[500010], c[8010], s, md, f; // 힙 영역은 값 지정 없으면 0.
+
+int main()
+{
+    // fast_io
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int n;
+    cin >> n;
+
+    // 값 입력 받으며 모든 값 s에 저장, -4000 ~ 4000 값 갯수 ++
+    for (int i = 1; i <= n; i++)
+        cin >> a[i], s += a[i], c[a[i] + 4000]++;
+    
+    // -4000 ~ 4000 
+    for (int i = 1; i < 8001; i++){
+        if (c[md] == c[i] && !f) md = i, f = 1;
+        if (c[md] < c[i]) md = i, f = 0;
+    }
+    sort(a+1, a+n+1);
+    printf("%.f %d %d %d", (double)s / n, a[n / 2 + 1], md - 4000, a[n] - a[1]);
+}
 ```
 
 ```js
