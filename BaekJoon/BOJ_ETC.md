@@ -1,5 +1,54 @@
 # **ETC**
 
+## **Silver V 1475 방 번호**
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    char n[8] = {0};
+    int arr[10] = {0};
+
+    cin >> n;
+
+    for (int i = 0; n[i] && i < 8; i++)
+        arr[n[i] - '0']++;
+
+    arr[6] = arr[9] = (arr[6] + arr[9] + 1) / 2;
+
+    cout << *max_element(arr, arr+10);
+}
+```
+
+## **10808 알파벳 개수**
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    char str[101] = {0};
+    int alpha[27] = {0};
+
+    cin >> str;
+    for (int i : str)
+        alpha[i - 'a']++;
+    for (int i : alpha)
+        cout << i << " ";
+}
+```
 
 ## **2720 세탁소 사장 동혁**
 
