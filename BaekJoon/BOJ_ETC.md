@@ -1,5 +1,54 @@
 # **ETC**
 
+## 1919 애너그램 만들기
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    string a, b;
+    cin >> a >> b;
+    int n = a.size() + b.size();
+
+    for (int i = 0; i < a.size(); i++)
+        for (int j = 0; j < b.size(); j++)
+            if(a[i] == b[j])
+                a[i] = '_', b[j] = '-', n -= 2;
+    cout << n;
+}
+```
+
+## **10807 개수 세기**
+
+```cpp
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int n, v;    
+    cin >> n;
+
+    int arr[n] = {};
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cin >> v;
+    cout << count(arr, arr+n, v);
+}
+```
+
 ## **Silver V 1475 방 번호**
 
 ```cpp
