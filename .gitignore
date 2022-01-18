@@ -1,12 +1,9 @@
 **/tempCodeRunnerFile.*
 *.class
 Main.java
-test.py
-test.js
-test.c
-test.cpp
 *.exe
-.vscode/**
+.vscode
 BaekJoon/dev/stdin
 main.go
-test.ts
+test
+test.*
