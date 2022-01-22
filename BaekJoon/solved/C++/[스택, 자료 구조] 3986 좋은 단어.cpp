@@ -12,9 +12,9 @@ void BOJ_3986()
         stack<char> s;
         string str;
         cin >> str;
-
+        
         int n = str.size();
-
+        
         if (n % 2 == 1)
             continue;
 

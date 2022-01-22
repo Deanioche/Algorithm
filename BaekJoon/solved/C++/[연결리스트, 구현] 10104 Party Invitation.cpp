@@ -2,7 +2,7 @@
 #include <list>
 using namespace std;
 
-void BOJ_3986()
+void BOJ_10104()
 {
     list<int> l;
     int k, m;
@@ -33,5 +33,5 @@ int main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    BOJ_3986();
+    BOJ_10104();
 }

@@ -2,7 +2,7 @@
 #include <stack>
 using namespace std;
 
-void BOJ_3986()
+void BOJ_3015()
 {
     int N;
     cin >> N;
@@ -49,5 +49,5 @@ int main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    BOJ_3986();
+    BOJ_3015();
 }
