@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
     int s;
-    int tmp;
     cin >> s;
     vector<int> N(s);
     for (int i = 0; i < s; i++)
@@ -14,12 +13,12 @@ int main()
     {
         int ticket;
         cin >> ticket;
-        int tmp2 = N[i];
+        int tmp = N[i];
         for (int j = i; j > i - ticket; j--)
         {
             N[j] = N[j - 1];
         }
-        N[i - ticket] = tmp2;
+        N[i - ticket] = tmp;
     }
     for (int i = 0; i < s; i++)
     {
