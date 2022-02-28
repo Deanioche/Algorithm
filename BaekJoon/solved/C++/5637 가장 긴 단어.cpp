@@ -18,4 +18,5 @@ void BOJ_5637()
 int main()
 {
     BOJ_5637();
+    return (0);
 }
