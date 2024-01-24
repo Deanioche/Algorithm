@@ -1,4 +1,5 @@
-**/tempCodeRunnerFile.*
+*/tempCodeRunnerFile*
+tempCodeRunnerFile*
 *.class
 Main.java
 *.exe
@@ -8,4 +9,11 @@ main.go
 test*
 test.*
 dev/stdin
-main*
+*.dSYM
+META*
+*.js
+*.cpp
+*.kt
+*.sh
+dev
+DS_Store
