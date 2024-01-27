@@ -4,14 +4,13 @@ tempCodeRunnerFile*
 Main.java
 *.exe
 .vscode
-BaekJoon/dev/stdin
 main.go
 test*
 test.*
 dev/stdin
 *.dSYM
 META*
-*.js
+test.js
 *.cpp
 *.kt
 *.sh
